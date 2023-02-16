@@ -8,8 +8,8 @@ COPY ./requirements.txt /requirements.txt
 RUN pip --default-timeout=100 install -r requirements.txt
 COPY . /
 RUN apt update && apt-get install -y curl
-HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD curl --fail http://localhost:8080/ || exit 1
 CMD [ "./start" ]
+HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD curl --fail http://localhost:8080/ || exit 1
 
 
 
