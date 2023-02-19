@@ -8,7 +8,7 @@ autoinstall:
     keyboard:
         layout: en
         variant: us
-    packages: [open-vm-tools, openssh-server, net-tools, perl, open-iscsi, ntp, curl, vim, ifupdown, zip, unzip, gnupg2, software-properties-common, apt-transport-https, ca-certificates, lsb-release, python3-pip, 'python3-setuptools', jq, cloud-init ]
+    packages: [open-vm-tools, openssh-server, net-tools, perl, open-iscsi, ntp, curl, vim, ifupdown, zip, unzip, gnupg2, software-properties-common, apt-transport-https, ca-certificates, lsb-release, python3-pip, jq, cloud-init]
     network:
         network:
             version: 2
@@ -18,7 +18,7 @@ autoinstall:
     identity:
         hostname: ubuntu-server
         username: ubuntu
-        password: "$6$rounds=4096$yZoJ9qaeVx$w2kk5tQH8KqIhdWezISidHh62uBEXeTc18Umf0GXPi73CvV2IqHZEdTZbsIfD/GvKe8lQD4Dj3QOTLacrHxo8"
+        password: "$6$rounds=4096$ntlX/dlo6b$HXaLN4RcLIGaEDdQdR2VTYi9pslSeXWL131MqaakqE285Nv0kW9KRontQYivCbycZerUMcjVsuLl2V8bbdadI1"
     ssh:
         install-server: yes
         allow-pw: yes
