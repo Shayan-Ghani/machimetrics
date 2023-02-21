@@ -33,4 +33,4 @@ iso_checksum_type           = "sha256"
 iso_url                     = "https://releases.ubuntu.com/jammy/ubuntu-22.04.1-live-server-amd64.iso" 
 # Scripts
 
-shell_scripts               = ["./scripts/setup_ubuntu2204_withDocker.sh"]
+shell_scripts               = ["./scripts/setup_ubuntu2204_and_Docker"]
