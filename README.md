@@ -1,5 +1,9 @@
-# TryStack
+# Machimetrics
 
 Copyright © 2022 Shayan Ghani shayanghani1384@gmail.com
 
-a little micro-service for listing the metrics of a VM run on container.
+A flask application to gather the metrics of the host that the app's container is running on.
+
+
+
+
