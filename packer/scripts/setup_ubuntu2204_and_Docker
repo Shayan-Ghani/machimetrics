@@ -1,40 +1,6 @@
 #!/usr/bin/bash
 
-# Prepares a Ubuntu Server guest operating system.
-
-# ## This isn't required on 10.3.10+ of tools
-# ### Disable and clean tmp. ### 
-# echo '> Disabling and clean tmp ...'
-# sed -i 's/D/#&/' /usr/lib/tmpfiles.d/tmp.conf
-
-# #### Update the guest operating system. ###
-# echo '> Updating the guest operating system ...'
-# sudo apt-get update
-# sudo apt-get -y upgrade
-
-cat << 'EOL' | sudo tee /etc/rc.local
-#!/bin/sh -ef
-#
-# rc.local
-#
-# This script is executed at the end of each multiuser runlevel.
-# Make sure that the script will "" on success or any other
-# value on error.
-#
-# In order to enable or disable this script just change the execution
-# bits.
-#
-# By default this script does nothing.
-# dynamically create hostname (optional)
-if hostname | grep localhost; then
-    hostnamectl set-hostname "$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 13 ; echo '')"
-fi
-test -f /etc/ssh/ssh_host_dsa_key || dpkg-reconfigure openssh-server
-exit 0
-EOL
-
-# make sure the script is executable
-chmod +x /etc/rc.local
+# Prepares an Ubuntu Server guest operating system.
 
 ### Create a cleanup script. ###
 echo '> Creating cleanup script ...'
@@ -107,13 +73,13 @@ sudo /tmp/cleanup.sh
 echo '> Done.'  
 
 # Install docker
-# apt update -y
-# curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
-# add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
-# apt update -y
-# apt-cache policy docker-ce
-# apt install docker-ce -y
-# groupadd docker
-# usermod -aG docker ubuntu
+apt update -y
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+apt update -y
+apt-cache policy docker-ce
+apt install docker-ce -y
+groupadd docker
+usermod -aG docker ubuntu
 
 echo '> Packer Template Build -- Complete'
