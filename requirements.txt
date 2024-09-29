@@ -111,7 +111,7 @@ ufw==0.36
 unattended-upgrades==0.1
 unidiff==0.5.5
 uritemplate==0.6
-urllib3==1.25.8
+urllib3==1.26.19
 usb-creator==0.3.7
 vboxapi==1.0
 virtualbox==2.1.1
