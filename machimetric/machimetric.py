@@ -1,11 +1,7 @@
-from flask import Blueprint, Flask
-from flask import current_app
+from flask import Blueprint, Flask, current_app
 from json import dumps, load as json_load 
 from .config import Config
-from .util import now
-from .util import cpu_total
-from .util import memory_total
-from .util import get_ip_address
+from .util import now , cpu_total, memory_total, get_ip_address
 
 index_bp = Blueprint("index_bp", import_name=__name__)
 status_bp = Blueprint("status_bp", import_name=__name__)
